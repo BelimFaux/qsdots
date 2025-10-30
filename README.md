@@ -9,7 +9,7 @@ Quickshell is a toolkit for quickly building compontents for a desktop shell usi
 ## Installation
 
 > [!IMPORTANT]
-> **USE AT YOU OWN RISK**
+> **USE AT YOU OWN RISK**  
 > This is only really intended for my personal use, so just using this without changes will probably not work out of the box.
 > Feel free to copy code for your own config tho.
 
@@ -22,4 +22,5 @@ quickshell qt6-base qt6-declarative qt6-5compat hyprland libpipewire lm-sensors 
 Then clone the repo into your quickshell path. By default this is `~/.config/quickshell/`.
 
 > [!NOTE]
-> even though quickshell supports multiple compositor, this config is intended to be used with Hyprland. It could probably be adjusted to work with different compositors though.
+> Even though quickshell supports multiple compositor, this config is intended to be used with Hyprland.
+> It could probably be adjusted to work with different compositors though.
