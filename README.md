@@ -16,7 +16,7 @@ Quickshell is a toolkit for quickly building compontents for a desktop shell usi
 First install dependencies (some might only be available in the AUR):
 
 ```
-quickshell qt6-base qt6-declarative qt6-5compat hyprland libpipewire lm-sensors brightnessctl swww ttf-jetbrains-mono-nerd
+quickshell qt6-base qt6-declarative qt6-5compat hyprland libpipewire lm-sensors brightnessctl jq swww ttf-jetbrains-mono-nerd
 ```
 
 Then clone the repo into your quickshell path. By default this is `~/.config/quickshell/`.
