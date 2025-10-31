@@ -67,9 +67,9 @@ Rectangle {
             Layout.alignment: Qt.AlignCenter
             Layout.preferredWidth: root.width * (4 / 5)
 
-            implicitHeight: Theme.mediaPlayerBarSize
+            implicitHeight: Config.mediaPlayerBarSize
             radius: height / 2
-            color: Theme.mediaPlayerBarUnfilled
+            color: Config.mediaPlayerBarUnfilled
 
             MouseArea {
                 anchors.fill: parent
@@ -94,16 +94,16 @@ Rectangle {
 
                 implicitWidth: parent.width * Math.min((root.player?.position ?? 0) / (root.player?.length ?? 1), 1.0)
                 radius: parent.radius
-                color: ((root.player?.positionSupported ?? false) && (root.player?.lengthSupported ?? false)) ? Theme.mediaPlayerBarFilled : parent.color
+                color: ((root.player?.positionSupported ?? false) && (root.player?.lengthSupported ?? false)) ? Config.mediaPlayerBarFilled : parent.color
             }
         }
 
         Text {
             Layout.alignment: Qt.AlignCenter
             text: qsTr(((root.player?.positionSupported ?? false) ? formatTime(root.player?.position ?? 0) : "-") + "/" + ((root.player?.lengthSupported ?? false) ? formatTime(root.player?.length ?? 0) : "-"))
-            font.family: Theme.textFontFamily
-            font.pointSize: Theme.fontSize
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            font.pointSize: Config.fontSize
+            color: Config.textColor
 
             function formatTime(time: int): string {
                 if (time === 0)
@@ -122,9 +122,9 @@ Rectangle {
 
             Text {
                 text: qsTr("Player:")
-                font.family: Theme.textFontFamily
-                font.pointSize: Theme.mediaPlayerSmallFontSize
-                color: Theme.textColor
+                font.family: Config.textFontFamily
+                font.pointSize: Config.mediaPlayerSmallFontSize
+                color: Config.textColor
             }
 
             ComboBox {
@@ -141,17 +141,17 @@ Rectangle {
                     rightPadding: control.indicator.width + 5
 
                     text: control.displayText
-                    font.family: Theme.textFontFamily
-                    font.pointSize: Theme.mediaPlayerSmallFontSize
-                    color: Theme.textColor
+                    font.family: Config.textFontFamily
+                    font.pointSize: Config.mediaPlayerSmallFontSize
+                    color: Config.textColor
                     verticalAlignment: Text.AlignVCenter
                     elide: Text.ElideRight
                 }
 
                 background: Rectangle {
-                    border.color: Theme.mediaPlayerSelectorBorder
+                    border.color: Config.mediaPlayerSelectorBorder
                     border.width: 2
-                    color: Theme.mediaPlayerSelectorBackground
+                    color: Config.mediaPlayerSelectorBackground
                     radius: 5
                 }
 
@@ -161,16 +161,16 @@ Rectangle {
                     required property int index
                     contentItem: Text {
                         text: delegate.modelData
-                        font.family: Theme.textFontFamily
-                        font.pointSize: Theme.mediaPlayerSmallFontSize
-                        color: Theme.textColor
+                        font.family: Config.textFontFamily
+                        font.pointSize: Config.mediaPlayerSmallFontSize
+                        color: Config.textColor
                         verticalAlignment: Text.AlignVCenter
                         elide: Text.ElideRight
                     }
                     background: Rectangle {
                         implicitWidth: control.width
                         implicitHeight: parent.height
-                        color: delegate.highlighted ? Theme.mediaPlayerSelectorSelected : "transparent"
+                        color: delegate.highlighted ? Config.mediaPlayerSelectorSelected : "transparent"
                     }
                     highlighted: control.highlightedIndex === index
                 }
@@ -191,9 +191,9 @@ Rectangle {
                     }
 
                     background: Rectangle {
-                        border.color: Theme.mediaPlayerSelectorBorder
+                        border.color: Config.mediaPlayerSelectorBorder
                         border.width: 2
-                        color: Theme.mediaPlayerSelectorBackground
+                        color: Config.mediaPlayerSelectorBackground
                         radius: 5
                     }
                 }

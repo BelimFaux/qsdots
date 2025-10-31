@@ -16,7 +16,7 @@ BarComponent {
         ClickableIcon {
             id: specialButton
             iconString: ActiveWindow.isSpecial ? Hyprland.focusedWorkspace.name : ""
-            iconColor: Theme.yellowColor
+            iconColor: Config.windowControlsScratchpad
             clickAction: function () {
                 if (ActiveWindow.isSpecial) {
                     ActiveWindow.moveToWorkspace(Hyprland.focusedWorkspace.name);
@@ -30,7 +30,7 @@ BarComponent {
 
         ClickableIcon {
             iconString: ActiveWindow.isFullscreen ? "󰘕" : "󰘖"
-            iconColor: Theme.greenColor
+            iconColor: Config.windowControlsMaximize
             clickAction: function () {
                 ActiveWindow.fullscreen(false);
             }
@@ -43,7 +43,7 @@ BarComponent {
 
         ClickableIcon {
             iconString: ""
-            iconColor: Theme.redColor
+            iconColor: Config.windowControlsClose
             clickAction: function () {
                 ActiveWindow.close();
             }
@@ -51,7 +51,7 @@ BarComponent {
         }
     }
 
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentBackground
-    borderColor: Theme.windowControlsBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentBackground
+    borderColor: Config.windowControlsBorder
 }

@@ -12,7 +12,7 @@ LazyLoader {
 
     PanelWindow {
         id: popupTray
-        implicitWidth: Theme.notificationWidth
+        implicitWidth: Config.notificationWidth
         color: "transparent"
         focusable: false
 
@@ -23,11 +23,11 @@ LazyLoader {
         anchors.top: true
         anchors.right: true
         anchors.bottom: true
-        margins.top: Theme.notificationMargin
-        margins.right: Theme.notificationMargin
-        margins.bottom: Theme.notificationMargin
+        margins.top: Config.notificationMargin
+        margins.right: Config.notificationMargin
+        margins.bottom: Config.notificationMargin
 
-        property int spacing: Theme.notificationSpacing
+        property int spacing: Config.notificationSpacing
 
         Column {
             id: notificationColumn

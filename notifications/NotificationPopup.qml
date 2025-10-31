@@ -33,22 +33,22 @@ Rectangle {
     x: width
     opacity: 0
 
-    width: Theme.notificationWidth
-    color: Theme.osdSliderBackground
-    radius: Theme.notificationHeight / 3
+    width: Config.notificationWidth
+    color: Config.osdSliderBackground
+    radius: Config.notificationHeight / 3
     border.color: {
         switch (modelData.urgency || NotificationUrgency.Low) {
         case NotificationUrgency.Critical:
-            return Theme.notificationBorderUrgent;
+            return Config.notificationBorderUrgent;
         case NotificationUrgency.Normal:
-            return Theme.notificationBorderNormal;
+            return Config.notificationBorderNormal;
         case NotificationUrgency.Low:
-            return Theme.notificationBorderLow;
+            return Config.notificationBorderLow;
         }
     }
-    border.width: Theme.notificationBorderWidth
+    border.width: Config.notificationBorderWidth
 
-    height: contentRow.height + Theme.notificationPadding
+    height: contentRow.height + Config.notificationPadding
 
     ParallelAnimation {
         id: appearAnimation
@@ -122,7 +122,7 @@ Rectangle {
         }
 
         iconString: "󰈉"
-        iconColor: Theme.textColor
+        iconColor: Config.textColor
         clickAction: function () {
             root.hide();
         }
@@ -139,7 +139,7 @@ Rectangle {
         }
 
         iconString: ""
-        iconColor: Theme.textColor
+        iconColor: Config.textColor
         clickAction: function () {
             root.dismiss();
         }
@@ -149,14 +149,14 @@ Rectangle {
         id: contentRow
         anchors.centerIn: parent
         spacing: 10
-        width: parent.width - Theme.notificationPadding
+        width: parent.width - Config.notificationPadding
 
         Rectangle {
             id: iconBackground
 
             anchors.verticalCenter: parent.verticalCenter
-            implicitHeight: Theme.notificationHeight
-            implicitWidth: Theme.notificationHeight
+            implicitHeight: Config.notificationHeight
+            implicitWidth: Config.notificationHeight
             color: "transparent"
 
             MouseArea {
@@ -196,7 +196,7 @@ Rectangle {
                 IconImage {
                     anchors.fill: parent
                     smooth: true
-                    implicitSize: Theme.notificationHeight
+                    implicitSize: Config.notificationHeight
                     source: Quickshell.iconPath(root.modelData.appIcon)
                     asynchronous: true
                 }
@@ -212,9 +212,9 @@ Rectangle {
                 Text {
                     anchors.centerIn: parent
                     text: "󰂚"
-                    font.family: Theme.iconFontFamily
-                    font.pixelSize: Theme.notificationHeight
-                    color: Theme.textColor
+                    font.family: Config.iconFontFamily
+                    font.pixelSize: Config.notificationHeight
+                    color: Config.textColor
                 }
             }
         }
@@ -231,14 +231,14 @@ Rectangle {
             }
 
             width: contentRow.width - iconBackground.width - 25
-            spacing: Theme.notificationTextSpacing
+            spacing: Config.notificationTextSpacing
 
             Text {
                 text: root.modelData.summary
                 width: parent.width
-                color: Theme.notificationTitleColor
-                font.family: Theme.textFontFamily
-                font.pixelSize: Theme.notificationTitleSize
+                color: Config.notificationTitleColor
+                font.family: Config.textFontFamily
+                font.pixelSize: Config.notificationTitleSize
                 wrapMode: Text.Wrap
                 visible: text !== ""
             }
@@ -246,9 +246,9 @@ Rectangle {
             Text {
                 text: textColumn.bodyText
                 width: parent.width
-                color: Theme.notificationBodyColor
-                font.family: Theme.textFontFamily
-                font.pixelSize: Theme.notificationBodySize
+                color: Config.notificationBodyColor
+                font.family: Config.textFontFamily
+                font.pixelSize: Config.notificationBodySize
                 wrapMode: Text.Wrap
                 visible: text !== ""
 

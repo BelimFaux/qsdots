@@ -33,15 +33,15 @@ Button {
             anchors.centerIn: parent
             Text {
                 text: root.iconChar + " "
-                font.family: Theme.iconFontFamily
+                font.family: Config.iconFontFamily
                 font.pixelSize: root.iconHeight
-                color: Theme.textColor
+                color: Config.textColor
             }
             Text {
                 text: root.title
-                font.family: Theme.textFontFamily
+                font.family: Config.textFontFamily
                 font.pointSize: root.textSize
-                color: Theme.textColor
+                color: Config.textColor
             }
         }
     }

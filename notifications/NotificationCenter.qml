@@ -20,18 +20,18 @@ LazyLoader {
         anchors {
             top: true
             bottom: true
-            right: Theme.notificationCenterRight
-            left: !Theme.notificationCenterRight
+            right: Config.notificationCenterRight
+            left: !Config.notificationCenterRight
         }
         margins {
-            top: Theme.notificationCenterWindowMargin
-            bottom: Theme.notificationCenterWindowMargin
-            right: Theme.notificationCenterWindowMargin
+            top: Config.notificationCenterWindowMargin
+            bottom: Config.notificationCenterWindowMargin
+            right: Config.notificationCenterWindowMargin
         }
 
         WlrLayershell.namespace: "quickshell:notificationCenter"
         WlrLayershell.layer: WlrLayer.Overlay
-        implicitWidth: Theme.notificationWidth + 2 * Theme.notificationCenterPadding
+        implicitWidth: Config.notificationWidth + 2 * Config.notificationCenterPadding
         color: "transparent"
 
         Rectangle {
@@ -39,29 +39,29 @@ LazyLoader {
             anchors.fill: parent
 
             radius: 5
-            border.width: Theme.componentBorderSize
-            border.color: Theme.notificationCenterBorder
-            color: Theme.notificationCenterBackground
+            border.width: Config.componentBorderSize
+            border.color: Config.notificationCenterBorder
+            color: Config.notificationCenterBackground
 
             ColumnLayout {
                 id: notificationColumn
                 anchors.fill: parent
-                anchors.margins: Theme.notificationCenterPadding
+                anchors.margins: Config.notificationCenterPadding
 
-                spacing: Theme.notificationSpacing
-                width: Theme.notificationWidth
+                spacing: Config.notificationSpacing
+                width: Config.notificationWidth
 
                 RowLayout {
                     id: buttonRow
                     Layout.alignment: Qt.AlignRight
-                    spacing: Theme.notificationCenterSpacing
+                    spacing: Config.notificationCenterSpacing
 
                     ClickableIcon {
                         id: doNotDisturb
 
                         iconString: Notifications.doNotDisturb ? "󰂛" : "󰂚"
-                        iconColor: Theme.textColor
-                        fontSize: Theme.notificationCenterIconSize
+                        iconColor: Config.textColor
+                        fontSize: Config.notificationCenterIconSize
                         clickAction: function () {
                             Notifications.doNotDisturb = !Notifications.doNotDisturb;
                         }
@@ -71,8 +71,8 @@ LazyLoader {
                         id: clearAll
 
                         iconString: "󰗩"
-                        iconColor: Theme.textColor
-                        fontSize: Theme.notificationCenterIconSize
+                        iconColor: Config.textColor
+                        fontSize: Config.notificationCenterIconSize
                         clickAction: function () {
                             Notifications.clearAll();
                         }
@@ -82,8 +82,8 @@ LazyLoader {
                         id: close
 
                         iconString: ""
-                        iconColor: Theme.redColor
-                        fontSize: Theme.notificationCenterIconSize
+                        iconColor: Config.redColor
+                        fontSize: Config.notificationCenterIconSize
                         clickAction: function () {
                             Notifications.ncActive = false;
                         }
@@ -94,7 +94,7 @@ LazyLoader {
                     id: scrollContainer
                     Layout.alignment: Qt.AlignCenter
                     Layout.fillHeight: true
-                    Layout.topMargin: Theme.notificationCenterSpacing
+                    Layout.topMargin: Config.notificationCenterSpacing
 
                     ScrollBar.vertical: ScrollBar {
                         id: scrollBar
@@ -103,16 +103,16 @@ LazyLoader {
                         x: scrollContainer.width
                         height: scrollContainer.height
                         contentItem: Rectangle {
-                            implicitWidth: Theme.notificationCenterSpacing
+                            implicitWidth: Config.notificationCenterSpacing
                             radius: width / 2
-                            color: scrollBar.pressed ? Theme.notificationCenterScrollbarActive : Theme.notificationCenterScrollbarInactive
+                            color: scrollBar.pressed ? Config.notificationCenterScrollbarActive : Config.notificationCenterScrollbarInactive
                             opacity: scrollBar.active
                         }
                     }
 
                     Column {
-                        Layout.margins: Theme.notificationCenterSpacing
-                        spacing: Theme.notificationCenterSpacing
+                        Layout.margins: Config.notificationCenterSpacing
+                        spacing: Config.notificationCenterSpacing
 
                         Repeater {
                             id: repeater
@@ -128,7 +128,7 @@ LazyLoader {
                 }
 
                 FullMediaPlayer {
-                    implicitWidth: Theme.notificationWidth
+                    implicitWidth: Config.notificationWidth
                 }
             }
         }

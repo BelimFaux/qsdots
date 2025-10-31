@@ -13,16 +13,16 @@ Rectangle {
     property var onClicked
     property var onHovered: function () {}
 
-    Layout.preferredWidth: content.implicitWidth + Theme.componentPadding
-    Layout.preferredHeight: Theme.componentHeight
-    radius: Theme.componentHeight / 3
+    Layout.preferredWidth: content.implicitWidth + Config.componentPadding
+    Layout.preferredHeight: Config.componentHeight
+    radius: Config.componentHeight / 3
     color: mouseArea.containsMouse ? root.hoverColor : root.bgColor
     border.color: borderColor
-    border.width: Theme.componentBorderSize
+    border.width: Config.componentBorderSize
 
     Behavior on color {
         ColorAnimation {
-            duration: Theme.componentHoverAnimationDuration
+            duration: Config.componentHoverAnimationDuration
         }
     }
 

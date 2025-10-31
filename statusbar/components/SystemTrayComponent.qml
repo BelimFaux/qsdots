@@ -10,12 +10,12 @@ import qs.widgets
 Rectangle {
     id: root
 
-    Layout.preferredWidth: elems.implicitWidth + Theme.componentPadding
-    Layout.preferredHeight: Theme.componentHeight
-    radius: Theme.componentHeight / 3
-    color: Theme.componentBackground
-    border.color: Theme.systemTrayBorder
-    border.width: Theme.componentBorderSize
+    Layout.preferredWidth: elems.implicitWidth + Config.componentPadding
+    Layout.preferredHeight: Config.componentHeight
+    radius: Config.componentHeight / 3
+    color: Config.componentBackground
+    border.color: Config.systemTrayBorder
+    border.width: Config.componentBorderSize
 
     Item {
         id: contentContainer
@@ -34,13 +34,13 @@ Rectangle {
                 id: component
                 required property SystemTrayItem modelData
                 property alias item: component.modelData
-                Layout.preferredWidth: Theme.iconHeight + 2
-                Layout.preferredHeight: Theme.componentHeight
+                Layout.preferredWidth: Config.iconHeight + 2
+                Layout.preferredHeight: Config.componentHeight
                 color: "transparent"
 
                 IconImage {
                     anchors.centerIn: parent
-                    implicitSize: Theme.iconHeight
+                    implicitSize: Config.iconHeight
                     source: component.item.icon
                 }
 
@@ -81,12 +81,12 @@ Rectangle {
                     id: tooltip
                     anchorItem: component
                     visible: false
-                    borderColor: Theme.systemTrayBorder
+                    borderColor: Config.systemTrayBorder
                     content: Text {
                         text: qsTr(component.modelData.tooltipTitle)
-                        font.family: Theme.textFontFamily
-                        font.pixelSize: Theme.workspaceWindowTitleFontSize
-                        color: Theme.textColor
+                        font.family: Config.textFontFamily
+                        font.pixelSize: Config.workspaceWindowTitleFontSize
+                        color: Config.textColor
                         padding: 5
                     }
                 }

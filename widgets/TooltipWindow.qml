@@ -16,7 +16,7 @@ Scope {
 
         anchor {
             item: root.anchorItem
-            margins.top: Theme.workspaceWindowTitleMargin
+            margins.top: Config.workspaceWindowTitleMargin
             rect {
                 y: root.anchorItem.height
             }
@@ -30,8 +30,8 @@ Scope {
             implicitWidth: contentContainer.width
             implicitHeight: contentContainer.height
             border.color: root.borderColor
-            color: Theme.baseColor
-            border.width: Theme.componentBorderSize
+            color: Config.baseColor
+            border.width: Config.componentBorderSize
             radius: 5
             opacity: previewWindow.visible ? 1 : 0
 

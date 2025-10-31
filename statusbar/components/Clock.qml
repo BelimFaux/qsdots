@@ -8,13 +8,13 @@ BarComponent {
     id: root
     content: Text {
         text: qsTr((Notifications.hasNotifs && !Notifications.doNotDisturb ? "󱅫 " : "") + Time.time)
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.fontSize
-        color: Theme.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.fontSize
+        color: Config.textColor
     }
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentHover
-    borderColor: Theme.clockBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentHover
+    borderColor: Config.clockBorder
 
     onClicked: () => {
         Notifications.ncActive = !Notifications.ncActive;
@@ -28,14 +28,14 @@ BarComponent {
         id: tooltip
         anchorItem: root
         visible: false
-        borderColor: Theme.clockBorder
+        borderColor: Config.clockBorder
 
         content: Text {
             id: content
             text: qsTr((Notifications.ncActive ? "close" : "open") + " notification center")
-            font.family: Theme.textFontFamily
-            font.pixelSize: Theme.workspaceWindowTitleFontSize
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            font.pixelSize: Config.workspaceWindowTitleFontSize
+            color: Config.textColor
             padding: 5
         }
     }

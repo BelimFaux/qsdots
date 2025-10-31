@@ -10,12 +10,12 @@ RowLayout {
     Layout.fillWidth: true
     Layout.alignment: Qt.AlignCenter
     Layout.margins: 10
-    spacing: Theme.mediaPlayerButtonSpacing
+    spacing: Config.mediaPlayerButtonSpacing
 
     ClickableIcon {
         iconString: "󰒮"
-        iconColor: (root.player?.canGoPrevious ?? false) ? Theme.textColor : Theme.mediaPlayerButtonInactive
-        fontSize: Theme.mediaPlayerButtonSize
+        iconColor: (root.player?.canGoPrevious ?? false) ? Config.textColor : Config.mediaPlayerButtonInactive
+        fontSize: Config.mediaPlayerButtonSize
         clickAction: function () {
             if (root.player.canGoPrevious)
                 root.player.previous();
@@ -24,8 +24,8 @@ RowLayout {
 
     ClickableIcon {
         iconString: (root.player?.isPlaying ?? false) ? "󰏤" : "󰐊"
-        iconColor: (root.player?.canTogglePlaying ?? false) ? Theme.textColor : Theme.mediaPlayerButtonInactive
-        fontSize: Theme.mediaPlayerButtonSize
+        iconColor: (root.player?.canTogglePlaying ?? false) ? Config.textColor : Config.mediaPlayerButtonInactive
+        fontSize: Config.mediaPlayerButtonSize
         clickAction: function () {
             if (root.player.canTogglePlaying)
                 root.player.togglePlaying();
@@ -34,8 +34,8 @@ RowLayout {
 
     ClickableIcon {
         iconString: "󰒭"
-        iconColor: (root.player?.canGoNext ?? false) ? Theme.textColor : Theme.mediaPlayerButtonInactive
-        fontSize: Theme.mediaPlayerButtonSize
+        iconColor: (root.player?.canGoNext ?? false) ? Config.textColor : Config.mediaPlayerButtonInactive
+        fontSize: Config.mediaPlayerButtonSize
         clickAction: function () {
             if (root.player.canGoNext)
                 root.player.next();

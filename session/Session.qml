@@ -26,7 +26,7 @@ Scope {
 
                 BlurredBackground {
                     screen: session.screen
-                    blurRadius: Theme.sessionBlur
+                    blurRadius: Config.sessionBlur
                 }
 
                 anchors {
@@ -49,7 +49,7 @@ Scope {
                 }
 
                 ColumnLayout {
-                    spacing: Theme.sessionButtonSpacing
+                    spacing: Config.sessionButtonSpacing
                     anchors.centerIn: parent
                     SessionButton {
                         id: sessionLock

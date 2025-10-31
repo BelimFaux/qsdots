@@ -9,8 +9,8 @@ Button {
     required property color iconColor
     required property var clickAction
     property var doubleClickAction: function () {}
-    property string fontFamily: Theme.iconFontFamily
-    property int fontSize: Theme.iconHeight
+    property string fontFamily: Config.iconFontFamily
+    property int fontSize: Config.iconHeight
 
     background: Rectangle {
         id: rect

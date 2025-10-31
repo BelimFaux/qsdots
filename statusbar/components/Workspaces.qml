@@ -19,12 +19,12 @@ Rectangle {
         }
     }
 
-    Layout.preferredWidth: elems.implicitWidth + Theme.componentPadding
-    Layout.preferredHeight: Theme.componentHeight
-    radius: Theme.componentHeight / 3
-    color: Theme.componentBackground
-    border.color: Theme.workspacesBorder
-    border.width: Theme.componentBorderSize
+    Layout.preferredWidth: elems.implicitWidth + Config.componentPadding
+    Layout.preferredHeight: Config.componentHeight
+    radius: Config.componentHeight / 3
+    color: Config.componentBackground
+    border.color: Config.workspacesBorder
+    border.width: Config.componentBorderSize
 
     Item {
         id: contentContainer
@@ -44,13 +44,13 @@ Rectangle {
 
             content: Text {
                 text: qsTr("")
-                color: Theme.textColor
-                font.family: Theme.textFontFamily
-                font.pointSize: Theme.fontSize
+                color: Config.textColor
+                font.family: Config.textFontFamily
+                font.pointSize: Config.fontSize
             }
 
-            bgColor: toggled ? Theme.workspaceActive : Theme.workspaceInactive
-            hoverColor: Theme.workspaceHover
+            bgColor: toggled ? Config.workspaceActive : Config.workspaceInactive
+            hoverColor: Config.workspaceHover
             borderColor: "transparent"
 
             onClicked: function () {
@@ -65,13 +65,13 @@ Rectangle {
                 id: specialTip
                 visible: false
                 anchorItem: special
-                borderColor: Theme.workspacesBorder
+                borderColor: Config.workspacesBorder
 
                 content: Text {
                     text: qsTr((special.toggled ? "close" : "open") + " scratchpad")
-                    font.family: Theme.textFontFamily
-                    font.pixelSize: Theme.workspaceWindowTitleFontSize
-                    color: Theme.textColor
+                    font.family: Config.textFontFamily
+                    font.pixelSize: Config.workspaceWindowTitleFontSize
+                    color: Config.textColor
                     padding: 5
                 }
             }
@@ -93,27 +93,27 @@ Rectangle {
                         const prefix = comp.ws?.urgent ?? false;
                         return (prefix ? "!" : "") + name;
                     }
-                    color: Theme.textColor
-                    font.family: Theme.textFontFamily
-                    font.pointSize: Theme.fontSize
-                    leftPadding: comp.isActive ? Theme.workspaceActivePadding : 0
-                    rightPadding: comp.isActive ? Theme.workspaceActivePadding : 0
+                    color: Config.textColor
+                    font.family: Config.textFontFamily
+                    font.pointSize: Config.fontSize
+                    leftPadding: comp.isActive ? Config.workspaceActivePadding : 0
+                    rightPadding: comp.isActive ? Config.workspaceActivePadding : 0
 
                     Behavior on leftPadding {
                         NumberAnimation {
-                            duration: Theme.workspacePaddingAnimationDuration
+                            duration: Config.workspacePaddingAnimationDuration
                             easing.type: Easing.InOutQuad
                         }
                     }
                     Behavior on rightPadding {
                         NumberAnimation {
-                            duration: Theme.workspacePaddingAnimationDuration
+                            duration: Config.workspacePaddingAnimationDuration
                             easing.type: Easing.InOutQuad
                         }
                     }
                 }
-                bgColor: isActive ? Theme.workspaceActive : Theme.workspaceInactive
-                hoverColor: Theme.workspaceHover
+                bgColor: isActive ? Config.workspaceActive : Config.workspaceInactive
+                hoverColor: Config.workspaceHover
                 borderColor: "transparent"
 
                 onClicked: function () {
@@ -129,7 +129,7 @@ Rectangle {
                     id: previewWindow
                     visible: false
                     anchorItem: comp
-                    borderColor: Theme.workspacesBorder
+                    borderColor: Config.workspacesBorder
 
                     content: Column {
                         id: windowNames
@@ -144,9 +144,9 @@ Rectangle {
                                 id: text
                                 required property string modelData
                                 text: modelData
-                                font.family: Theme.textFontFamily
-                                font.pixelSize: Theme.workspaceWindowTitleFontSize
-                                color: Theme.textColor
+                                font.family: Config.textFontFamily
+                                font.pixelSize: Config.workspaceWindowTitleFontSize
+                                color: Config.textColor
                                 padding: 5
                             }
                         }

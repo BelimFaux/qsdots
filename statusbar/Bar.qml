@@ -26,12 +26,12 @@ Scope {
                 id: bar
                 property var modelData
                 screen: modelData
-                color: Theme.barBackground
+                color: Config.barBackground
                 implicitHeight: content.implicitHeight + 2
 
                 anchors {
-                    top: Theme.topBar
-                    bottom: !Theme.topBar
+                    top: Config.topBar
+                    bottom: !Config.topBar
                     left: true
                     right: true
                 }
@@ -40,7 +40,7 @@ Scope {
                     id: content
                     anchors.fill: parent
                     color: "transparent"
-                    implicitHeight: Theme.barHeight
+                    implicitHeight: Config.barHeight
                     anchors.topMargin: 4
                     anchors.bottomMargin: 2
 
@@ -51,12 +51,12 @@ Scope {
 
                         RowLayout {
                             id: left
-                            spacing: Theme.componentMargins
+                            spacing: Config.componentMargins
                             Layout.alignment: Qt.AlignLeft
                             Layout.fillWidth: true
 
                             Icon {
-                                Layout.leftMargin: Theme.componentMargins
+                                Layout.leftMargin: Config.componentMargins
                             }
                             Workspaces {}
                         }
@@ -77,7 +77,7 @@ Scope {
 
                         RowLayout {
                             id: right
-                            spacing: Theme.componentMargins
+                            spacing: Config.componentMargins
                             Layout.alignment: Qt.AlignRight
                             Layout.fillWidth: true
 
@@ -85,11 +85,11 @@ Scope {
                             CpuComponent {}
                             MemoryComponent {}
                             Clock {
-                                Layout.rightMargin: bat.visible ? 0 : Theme.componentMargins
+                                Layout.rightMargin: bat.visible ? 0 : Config.componentMargins
                             }
                             Battery {
                                 id: bat
-                                Layout.rightMargin: Theme.componentMargins
+                                Layout.rightMargin: Config.componentMargins
                             }
                         }
                     }

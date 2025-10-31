@@ -5,15 +5,15 @@ import qs
 
 ActionButton {
     id: root
-    defaultColor: Theme.sessionButtonBackground
-    hoverColor: Theme.sessionButtonSelectedBackground
-    borderColor: Theme.sessionButtonBorder
-    hoverBorderColor: Theme.sessionButtonSelectedBorder
-    bWidth: Theme.sessionButtonWidth
-    bHeight: Theme.sessionButtonHeight
-    borderWidth: Theme.sessionButtonBorderWidth
-    iconHeight: Theme.sessionButtonIconHeight
-    textSize: Theme.sessionButtonTextSize
+    defaultColor: Config.sessionButtonBackground
+    hoverColor: Config.sessionButtonSelectedBackground
+    borderColor: Config.sessionButtonBorder
+    hoverBorderColor: Config.sessionButtonSelectedBorder
+    bWidth: Config.sessionButtonWidth
+    bHeight: Config.sessionButtonHeight
+    borderWidth: Config.sessionButtonBorderWidth
+    iconHeight: Config.sessionButtonIconHeight
+    textSize: Config.sessionButtonTextSize
 
     onFocusChanged: {
         root.isHovered = root.focus;

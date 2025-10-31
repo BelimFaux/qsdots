@@ -6,11 +6,11 @@ import qs
 BarComponent {
     content: Text {
         text: qsTr(Cpu.temp + (Cpu.fanSpeed !== "" ? " | " + Cpu.fanSpeed : ""))
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.fontSize
-        color: Theme.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.fontSize
+        color: Config.textColor
     }
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentBackground
-    borderColor: Theme.cpuBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentBackground
+    borderColor: Config.cpuBorder
 }

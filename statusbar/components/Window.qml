@@ -19,12 +19,12 @@ BarComponent {
             }
             return text;
         }
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.fontSize
-        color: Theme.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.fontSize
+        color: Config.textColor
     }
 
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentBackground
-    borderColor: Theme.windowNameBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentBackground
+    borderColor: Config.windowNameBorder
 }

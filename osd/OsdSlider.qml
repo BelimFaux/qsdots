@@ -22,39 +22,39 @@ Scope {
             exclusiveZone: 0
             aboveWindows: WlrLayer.Overlay
 
-            implicitWidth: Theme.osdSliderWidth
-            implicitHeight: Theme.osdSliderHeight
+            implicitWidth: Config.osdSliderWidth
+            implicitHeight: Config.osdSliderHeight
             color: "transparent"
 
             mask: Region {}
 
             Rectangle {
                 anchors.fill: parent
-                radius: Theme.osdSliderHeight / 3
-                color: Theme.osdSliderBackground
+                radius: Config.osdSliderHeight / 3
+                color: Config.osdSliderBackground
                 border.color: root.borderColor
-                border.width: Theme.osdSliderBorderSize
+                border.width: Config.osdSliderBorderSize
 
                 RowLayout {
                     anchors {
                         fill: parent
-                        leftMargin: Theme.osdSliderMargin
-                        rightMargin: Theme.osdSliderMargin
+                        leftMargin: Config.osdSliderMargin
+                        rightMargin: Config.osdSliderMargin
                     }
 
                     Text {
                         text: qsTr(root.text)
-                        font.pixelSize: Theme.osdSliderIconSize
-                        font.family: Theme.iconFontFamily
-                        color: Theme.osdSliderFilled
+                        font.pixelSize: Config.osdSliderIconSize
+                        font.family: Config.iconFontFamily
+                        color: Config.osdSliderFilled
                     }
 
                     Rectangle {
                         Layout.fillWidth: true
 
-                        implicitHeight: Theme.osdSliderBarHeight
-                        radius: Theme.osdSliderBarHeight / 2
-                        color: Theme.osdSliderUnfilled
+                        implicitHeight: Config.osdSliderBarHeight
+                        radius: Config.osdSliderBarHeight / 2
+                        color: Config.osdSliderUnfilled
 
                         Rectangle {
                             anchors {
@@ -65,7 +65,7 @@ Scope {
 
                             implicitWidth: parent.width * root.value
                             radius: parent.radius
-                            color: Theme.osdSliderFilled
+                            color: Config.osdSliderFilled
                         }
                     }
                 }

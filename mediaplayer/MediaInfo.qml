@@ -15,9 +15,9 @@ ColumnLayout {
         text: qsTr((root.player?.trackTitle ?? "") || "Untitled")
         clip: true
         elide: Text.ElideRight
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.fontSize
-        color: Theme.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.fontSize
+        color: Config.textColor
     }
 
     Text {
@@ -26,8 +26,8 @@ ColumnLayout {
         text: qsTr((root.player?.trackArtist ?? "") || "Unknown")
         clip: true
         elide: Text.ElideRight
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.mediaPlayerSmallFontSize
-        color: Theme.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.mediaPlayerSmallFontSize
+        color: Config.textColor
     }
 }

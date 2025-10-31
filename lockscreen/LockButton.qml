@@ -2,13 +2,13 @@ import qs.widgets
 import qs
 
 ActionButton {
-    defaultColor: Theme.lockButtonBackground
-    hoverColor: Theme.lockButtonSelectedBackground
-    borderColor: Theme.lockButtonBorder
-    hoverBorderColor: Theme.lockButtonSelectedBorder
-    bWidth: Theme.lockButtonWidth
-    bHeight: Theme.lockButtonHeight
-    borderWidth: Theme.lockButtonBorderWidth
-    iconHeight: Theme.lockButtonIconHeight
-    textSize: Theme.lockButtonTextSize
+    defaultColor: Config.lockButtonBackground
+    hoverColor: Config.lockButtonSelectedBackground
+    borderColor: Config.lockButtonBorder
+    hoverBorderColor: Config.lockButtonSelectedBorder
+    bWidth: Config.lockButtonWidth
+    bHeight: Config.lockButtonHeight
+    borderWidth: Config.lockButtonBorderWidth
+    iconHeight: Config.lockButtonIconHeight
+    textSize: Config.lockButtonTextSize
 }

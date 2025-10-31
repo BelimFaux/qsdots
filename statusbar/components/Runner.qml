@@ -11,19 +11,19 @@ BarComponent {
     property bool windowOpen: ActiveWindow.isSome && Hyprland.monitorFor(screen).id == ActiveWindow.monitorId
     content: RowLayout {
         Text {
-            text: Theme.runIcon
-            color: Theme.textColor
-            font.family: Theme.iconFontFamily
-            font.pixelSize: Theme.iconHeight
+            text: Config.runIcon
+            color: Config.textColor
+            font.family: Config.iconFontFamily
+            font.pixelSize: Config.iconHeight
         }
         Text {
-            text: Theme.runText
+            text: Config.runText
             visible: !root.windowOpen
             opacity: root.windowOpen ? 0 : 1
             Layout.preferredWidth: root.windowOpen ? 0 : implicitWidth
-            color: Theme.textColor
-            font.family: Theme.textFontFamily
-            font.pointSize: Theme.fontSize
+            color: Config.textColor
+            font.family: Config.textFontFamily
+            font.pointSize: Config.fontSize
 
             Behavior on opacity {
                 NumberAnimation {
@@ -40,12 +40,12 @@ BarComponent {
             }
         }
     }
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentHover
-    borderColor: Theme.runBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentHover
+    borderColor: Config.runBorder
 
     onClicked: function () {
-        Hyprland.dispatch("exec " + Theme.runCommand);
+        Hyprland.dispatch("exec " + Config.runCommand);
     }
 
     onHovered: function () {
@@ -56,14 +56,14 @@ BarComponent {
         id: tooltip
         anchorItem: root
         visible: false
-        borderColor: Theme.runBorder
+        borderColor: Config.runBorder
 
         content: Text {
             id: content
-            text: Theme.runText
-            font.family: Theme.textFontFamily
-            font.pixelSize: Theme.workspaceWindowTitleFontSize
-            color: Theme.textColor
+            text: Config.runText
+            font.family: Config.textFontFamily
+            font.pixelSize: Config.workspaceWindowTitleFontSize
+            color: Config.textColor
             padding: 5
         }
     }

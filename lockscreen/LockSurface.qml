@@ -19,7 +19,7 @@ Rectangle {
         source: Wallpaper.currentImagePath
         Rectangle {
             anchors.fill: parent
-            color: Theme.lockBackground
+            color: Config.lockBackground
         }
     }
 
@@ -35,13 +35,13 @@ Rectangle {
         anchors {
             top: root.top
             left: root.left
-            topMargin: Theme.abortButtonMargin
-            leftMargin: Theme.abortButtonMargin
+            topMargin: Config.abortButtonMargin
+            leftMargin: Config.abortButtonMargin
         }
 
         iconString: ""
-        iconColor: Theme.textColor
-        fontSize: Theme.abortButtonSize
+        iconColor: Config.textColor
+        fontSize: Config.abortButtonSize
         clickAction: function () {
             root.context.abortFingerprint();
         }
@@ -54,15 +54,15 @@ Rectangle {
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
-            topMargin: Theme.lockClockMargin
+            topMargin: Config.lockClockMargin
         }
 
         renderType: Text.NativeRendering
-        color: Theme.textColor
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.lockClockSize
+        color: Config.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.lockClockSize
 
-        text: Time.formattedTime(Theme.lockClockFormat)
+        text: Time.formattedTime(Config.lockClockFormat)
     }
 
     Label {
@@ -74,11 +74,11 @@ Rectangle {
         }
 
         renderType: Text.NativeRendering
-        color: Theme.textColor
-        font.family: Theme.textFontFamily
-        font.pointSize: Theme.lockDateSize
+        color: Config.textColor
+        font.family: Config.textFontFamily
+        font.pointSize: Config.lockDateSize
 
-        text: Time.formattedTime(Theme.lockDateFormat)
+        text: Time.formattedTime(Config.lockDateFormat)
     }
 
     ColumnLayout {
@@ -89,22 +89,22 @@ Rectangle {
 
         Label {
             text: root.context.pamMessage === "" ? "(Press Enter to scan fingerprint)" : root.context.pamMessage
-            font.family: Theme.textFontFamily
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            color: Config.textColor
         }
 
         RowLayout {
             TextField {
                 id: passwordBox
-                padding: Theme.passBoxPadding
+                padding: Config.passBoxPadding
                 leftInset: -5
 
                 background: Rectangle {
-                    implicitWidth: Theme.passBoxWidth
+                    implicitWidth: Config.passBoxWidth
                     radius: height / 3
-                    color: Theme.passBoxBackground
-                    border.color: Theme.passBoxBorder
-                    border.width: passwordBox.enabled ? Theme.passBoxBorderWidth : 0
+                    color: Config.passBoxBackground
+                    border.color: Config.passBoxBorder
+                    border.width: passwordBox.enabled ? Config.passBoxBorderWidth : 0
 
                     Behavior on border.width {
                         NumberAnimation {
@@ -118,12 +118,12 @@ Rectangle {
                 enabled: !root.context.unlockInProgress
                 echoMode: TextInput.Password
                 inputMethodHints: Qt.ImhSensitiveData
-                placeholderText: Theme.passBoxPlaceholder
-                font.family: Theme.textFontFamily
+                placeholderText: Config.passBoxPlaceholder
+                font.family: Config.textFontFamily
 
-                placeholderTextColor: Theme.textColor
+                placeholderTextColor: Config.textColor
                 passwordCharacter: '*'
-                color: Theme.textColor
+                color: Config.textColor
 
                 onTextChanged: root.context.currentText = this.text
                 onAccepted: root.context.tryUnlock()
@@ -139,20 +139,20 @@ Rectangle {
 
             Button {
                 contentItem: Text {
-                    text: Theme.unlockButtonText
-                    font.family: Theme.textFontFamily
-                    color: Theme.textColor
+                    text: Config.unlockButtonText
+                    font.family: Config.textFontFamily
+                    color: Config.textColor
                 }
-                padding: Theme.unlockButtonPadding
+                padding: Config.unlockButtonPadding
 
                 // don't steal focus from the text box
                 focusPolicy: Qt.NoFocus
 
                 background: Rectangle {
                     radius: height / 3
-                    color: Theme.unlockButtonBackground
-                    border.color: root.context.showFailure ? Theme.unlockButtonFailBorder : Theme.unlockButtonBorder
-                    border.width: root.context.unlockInProgress ? 0 : Theme.unlockButtonBorderWidth
+                    color: Config.unlockButtonBackground
+                    border.color: root.context.showFailure ? Config.unlockButtonFailBorder : Config.unlockButtonBorder
+                    border.width: root.context.unlockInProgress ? 0 : Config.unlockButtonBorderWidth
 
                     Behavior on border.width {
                         NumberAnimation {
@@ -168,18 +168,18 @@ Rectangle {
         }
 
         SmallMediaPlayer {
-            visible: Theme.lockShowMediaPlayer
+            visible: Config.lockShowMediaPlayer
             Layout.alignment: Qt.AlignCenter
-            Layout.topMargin: Theme.lockMediaPlayerMargin
+            Layout.topMargin: Config.lockMediaPlayerMargin
         }
     }
 
     RowLayout {
-        spacing: Theme.lockButtonSpacing
+        spacing: Config.lockButtonSpacing
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
-            bottomMargin: Theme.lockButtonBottomMargin
+            bottomMargin: Config.lockButtonBottomMargin
         }
 
         LockButton {

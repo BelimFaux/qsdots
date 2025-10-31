@@ -11,21 +11,21 @@ BarComponent {
     content: RowLayout {
         Text {
             visible: UPower.displayDevice.state == UPowerDeviceState.Charging
-            text: qsTr(Theme.chargingIcon + " ")
-            font.family: Theme.iconFontFamily
-            font.pixelSize: Theme.iconHeight
-            color: Theme.textColor
+            text: qsTr(Config.chargingIcon + " ")
+            font.family: Config.iconFontFamily
+            font.pixelSize: Config.iconHeight
+            color: Config.textColor
         }
         Text {
             text: qsTr(Math.round(100 * UPower.displayDevice.percentage) + "%")
-            font.family: Theme.textFontFamily
-            font.pointSize: Theme.fontSize
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            font.pointSize: Config.fontSize
+            color: Config.textColor
         }
     }
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentBackground
-    borderColor: Theme.batteryBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentBackground
+    borderColor: Config.batteryBorder
 
     onHovered: function () {
         tooltip.visible = !tooltip.visible;
@@ -35,14 +35,14 @@ BarComponent {
         id: tooltip
         anchorItem: root
         visible: false
-        borderColor: Theme.batteryBorder
+        borderColor: Config.batteryBorder
 
         content: Text {
             id: content
             text: qsTr((UPower.displayDevice.state === UPowerDeviceState.Charging ? "+" : "-") + UPower.displayDevice.changeRate + " W")
-            font.family: Theme.textFontFamily
-            font.pixelSize: Theme.workspaceWindowTitleFontSize
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            font.pixelSize: Config.workspaceWindowTitleFontSize
+            color: Config.textColor
             padding: 5
         }
     }

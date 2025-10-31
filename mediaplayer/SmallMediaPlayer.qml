@@ -36,15 +36,15 @@ Rectangle {
 
         RowLayout {
             Layout.alignment: Qt.AlignCenter
-            Layout.topMargin: Theme.smallMediaPlayerSwitcherSpacing
-            spacing: Theme.smallMediaPlayerSwitcherSpacing
+            Layout.topMargin: Config.smallMediaPlayerSwitcherSpacing
+            spacing: Config.smallMediaPlayerSwitcherSpacing
 
             ClickableIcon {
                 iconString: ""
                 // opacity instead of visible so that the space gets occupied
                 opacity: root.selectedPlayer - 1 >= 0 ? 1 : 0
-                iconColor: Theme.textColor
-                fontSize: Theme.fontSize
+                iconColor: Config.textColor
+                fontSize: Config.fontSize
                 clickAction: function () {
                     root.selectedPlayer -= 1;
                 }
@@ -53,16 +53,16 @@ Rectangle {
             Text {
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr((root.player?.identity ?? "") || "No Player selected")
-                font.family: Theme.textFontFamily
-                font.pointSize: Theme.fontSize
-                color: Theme.textColor
+                font.family: Config.textFontFamily
+                font.pointSize: Config.fontSize
+                color: Config.textColor
             }
 
             ClickableIcon {
                 iconString: ""
                 opacity: root.selectedPlayer + 1 < Mpris.players.values.length ? 1 : 0
-                iconColor: Theme.textColor
-                fontSize: Theme.fontSize
+                iconColor: Config.textColor
+                fontSize: Config.fontSize
                 clickAction: function () {
                     root.selectedPlayer += 1;
                 }

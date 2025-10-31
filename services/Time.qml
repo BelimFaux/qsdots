@@ -11,7 +11,7 @@ Singleton {
     }
 
     property string time: {
-        Qt.formatDateTime(clock.date, Theme.timeFormat);
+        Qt.formatDateTime(clock.date, Config.timeFormat);
     }
 
     SystemClock {

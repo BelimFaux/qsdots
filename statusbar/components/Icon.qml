@@ -7,14 +7,14 @@ import qs.widgets
 BarComponent {
     id: root
     content: Text {
-        text: Theme.distroIcon
-        color: Theme.distroColor
-        font.family: Theme.iconFontFamily
-        font.pixelSize: Theme.iconHeight
+        text: Config.distroIcon
+        color: Config.distroColor
+        font.family: Config.iconFontFamily
+        font.pixelSize: Config.iconHeight
     }
-    bgColor: Theme.componentBackground
-    hoverColor: Theme.componentHover
-    borderColor: Theme.iconBorder
+    bgColor: Config.componentBackground
+    hoverColor: Config.componentHover
+    borderColor: Config.iconBorder
 
     onClicked: function () {
         Hyprland.dispatch("exec qs ipc call session toggle");
@@ -28,14 +28,14 @@ BarComponent {
         id: tooltip
         anchorItem: root
         visible: false
-        borderColor: Theme.iconBorder
+        borderColor: Config.iconBorder
 
         content: Text {
             id: content
             text: "open session menu"
-            font.family: Theme.textFontFamily
-            font.pixelSize: Theme.workspaceWindowTitleFontSize
-            color: Theme.textColor
+            font.family: Config.textFontFamily
+            font.pixelSize: Config.workspaceWindowTitleFontSize
+            color: Config.textColor
             padding: 5
         }
     }
