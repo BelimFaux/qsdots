@@ -91,6 +91,8 @@ Singleton {
     readonly property color workspacesBorder: floating ? colors.blueColor : "transparent"
     readonly property color iconBorder: floating ? colors.lavenderColor : "transparent"
 
+    readonly property color tooltipBackground: colors.baseColor
+
     /* OsdSlider */
     readonly property int osdSliderWidth: 400
     readonly property int osdSliderHeight: 40
@@ -191,6 +193,7 @@ Singleton {
     readonly property color notificationCenterBackground: Qt.rgba(colors.baseColor.r, colors.baseColor.g, colors.baseColor.b, 0.7)
     readonly property color notificationCenterScrollbarActive: colors.overlay1Color
     readonly property color notificationCenterScrollbarInactive: colors.overlay0Color
+    readonly property color notificationCenterClose: colors.redColor
 
     /* Media Player */
     readonly property color mediaPlayerSelectorBorder: colors.blueColor

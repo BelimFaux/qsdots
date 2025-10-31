@@ -30,7 +30,7 @@ Scope {
             implicitWidth: contentContainer.width
             implicitHeight: contentContainer.height
             border.color: root.borderColor
-            color: Config.baseColor
+            color: Config.tooltipBackground
             border.width: Config.componentBorderSize
             radius: 5
             opacity: previewWindow.visible ? 1 : 0

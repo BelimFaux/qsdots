@@ -82,7 +82,7 @@ LazyLoader {
                         id: close
 
                         iconString: ""
-                        iconColor: Config.redColor
+                        iconColor: Config.notificationCenterClose
                         fontSize: Config.notificationCenterIconSize
                         clickAction: function () {
                             Notifications.ncActive = false;

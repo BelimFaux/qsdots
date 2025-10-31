@@ -1,6 +1,7 @@
 //@ pragma UseQApplication
 
 import Quickshell
+
 import qs.osd
 import qs.notifications
 import qs.statusbar
