@@ -56,7 +56,7 @@ Singleton {
 
         property Timer timer: Timer {
             running: true
-            interval: notif.notification.expireTimeout > 0 ? notif.notification.expireTimeout : Theme.notificationDefaultTimeout
+            interval: notif.notification.expireTimeout > 0 ? notif.notification.expireTimeout : Config.notificationDefaultTimeout
             onTriggered: {
                 if (notif !== null) {
                     notif.hideNotif();
