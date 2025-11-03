@@ -12,8 +12,8 @@ Singleton {
     id: root
     property bool ncActive: false
     property bool doNotDisturb: false
-    readonly property var list: []
-    readonly property var visible: list.filter(n => !doNotDisturb && n.visible)
+    readonly property list<Notif> list: []
+    readonly property list<Notif> visible: list.filter(n => !doNotDisturb && n.visible)
     readonly property bool hasNotifs: list.length > 0
 
     function clearAll(): void {
