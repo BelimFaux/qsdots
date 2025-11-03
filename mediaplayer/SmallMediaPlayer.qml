@@ -52,7 +52,7 @@ Rectangle {
 
             Text {
                 Layout.alignment: Qt.AlignCenter
-                text: qsTr((root.player?.identity ?? "") || "No Player selected")
+                text: qsTr((root.player?.identity ?? "") || "No Player found")
                 font.family: Config.textFontFamily
                 font.pointSize: Config.fontSize
                 color: Config.textColor
