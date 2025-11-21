@@ -1,5 +1,8 @@
 # qsdots
 
+> [!WARNING]
+> This repo was moved to [https://codeberg.org/belim_faux/qsdots](https://codeberg.org/belim_faux/qsdots)
+
 This repo contains my dotfiles for [quickshell](https://quickshell.org/), which I currently use for my desktop shell on Hyprland.
 
 Quickshell is a toolkit for quickly building compontents for a desktop shell using the [QML](https://doc.qt.io/qt-6/qml-tutorial.html) language.
