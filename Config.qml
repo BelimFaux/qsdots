@@ -40,6 +40,7 @@ Singleton {
     readonly property color textColor: colors.textColor
     readonly property int fontSize: 10
     readonly property string textFontFamily: "JetBrains Mono"
+    readonly property string noLigatureFontFamily: "JetBrains Mono NL"
     readonly property string iconFontFamily: "JetBrains Mono Propo"
 
     readonly property int iconHeight: 20

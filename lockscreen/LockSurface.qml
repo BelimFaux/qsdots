@@ -119,7 +119,7 @@ Rectangle {
                 echoMode: TextInput.Password
                 inputMethodHints: Qt.ImhSensitiveData
                 placeholderText: Config.passBoxPlaceholder
-                font.family: Config.textFontFamily
+                font.family: Config.noLigatureFontFamily
 
                 placeholderTextColor: Config.textColor
                 passwordCharacter: '*'
